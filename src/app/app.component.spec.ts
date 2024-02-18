@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CsvloaderComponent } from './components/csvloader/csvloader.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

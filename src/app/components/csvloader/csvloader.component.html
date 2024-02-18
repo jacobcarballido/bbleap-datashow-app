@@ -1,0 +1,56 @@
+<div class="container text-center m-2 mx-auto">
+    
+    <div class="row align-items-start ">
+      <div class="col">
+        <div class="btn-group " role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked (change)="useFileSpeed=true; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio1">Use file speed</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" (change)="useFileSpeed=false; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio2">Simulate speed</label>
+          
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group  flex-nowrap">
+            <span class="input-group-text">Speed (km/h)</span>
+            <input class="form-control" (change)="updateSpeed($event)">
+        </div>
+      </div>
+      <div class="col">
+        <div class="btn-group " role="group" aria-label="Basic radio toggle button group2">
+            <input type="radio" class="btn-check" name="btnradio2" id="btnradio3" autocomplete="off" checked (change)="orientation=1; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio3">Down</label>
+          
+            <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off" (change)="orientation=2; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio4">Left</label>
+
+            <input type="radio" class="btn-check" name="btnradio2" id="btnradio5" autocomplete="off" (change)="orientation=3; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio5">Right</label>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="input-group flex-nowrap">
+            <input type="file" class="file-upload form-control" accept=".csv" (change)="loadFile($event.target)">
+        </div>        
+      </div>
+
+      <div class="col">
+        <div class="btn-group " role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio3" id="btnradio6" autocomplete="off" checked (change)="useLines=false; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio6">Points</label>
+          
+            <input type="radio" class="btn-check" name="btnradio3" id="btnradio7" autocomplete="off" (change)="useLines=true; redrawChart()">
+            <label class="btn btn-outline-primary" for="btnradio7">Points + Lines</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>

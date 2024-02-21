@@ -37,12 +37,9 @@
       </div>
 
       <div class="col">
-        <div class="btn-group " role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio3" id="btnradio6" autocomplete="off" checked (change)="useLines=false; redrawChart()">
-            <label class="btn btn-outline-primary" for="btnradio6">Points</label>
-          
-            <input type="radio" class="btn-check" name="btnradio3" id="btnradio7" autocomplete="off" (change)="useLines=true; redrawChart()">
-            <label class="btn btn-outline-primary" for="btnradio7">Points + Lines</label>
+        <div class="input-group  flex-nowrap">
+            <span class="input-group-text">Clip Y (mm)</span>
+            <input class="form-control" (change)="updateClip($event)">
         </div>
       </div>
     </div>
